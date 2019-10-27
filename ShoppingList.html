@@ -1,23 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="ShoppingCSS.css"></head>
+<link rel="stylesheet" href="ShoppingCSS.css">
 </head>
+
+
 <body>
 
 <div class="topnav" id="myTopnav">
  
-  <a href="#MeineListen">Meine Listen</a>
+  <a href="https://de.wikipedia.org/wiki/Einkaufszettel">Shopping Liste</a>
 
- 
 </div>
 
-<div style="padding-left:16px">
+
+
+<form>
+    <input required='' type='text'>
+    <label alt='Item eingeben' placeholder='press Enter'></label>
+</form>
+
+
+<div id="Items"></div> 
+
+
+
+<div class="sidebar">  
+
+    <div class="sidebar">
+        <img alt="logo" height="150" width="150" src="C:\Users\strausto\OneDrive - Hewlett Packard Enterprise\Desktop\ShoppingList-master\einstellungen.png">
+
+        <ul>
+
+            <li class="listItem"><a href="https://shopping-lists-api.herokuapp.com/" target="_blank"><img alt="icon" height="40" src=
+              "C:\Users\strausto\OneDrive - Hewlett Packard Enterprise\Desktop\ShoppingList-master\listehinzufügen.png" width=
+              "40">Liste hinzufügen</a></li>
+
+            <div class="select">
+                <select id="listSelect"> 
+                  <option value="5d9c7b9ee2d16f00178a5c6b">Liste 1</option> 
+                  <option value="5db00803655dfa001785c029">Liste 2</option>
+                  <option value="5db00809655dfa001785c02a">Liste 3</option>
+                  <option value="5db2c148e3d42a0017c30a9c">Liste 4</option>
+                  "
+                </select>
+              </div>
+
+            <li class="listItem"><a href="#"><img alt="icon" height="40" src=
+            "C:\Users\strausto\OneDrive - Hewlett Packard Enterprise\Desktop\ShoppingList-master\add.png" width=
+            "40">Item hinzufügen</a></li>
+
+
+            <li class="listItem"><a href="#"><img alt="icon" height="40" src=
+            "C:\Users\strausto\OneDrive - Hewlett Packard Enterprise\Desktop\ShoppingList-master\delete.png" width=
+            "40">Item löschen</a></li>
+
   
+        </ul>
+   
 </div>
-<div class="sidebar">
-       
-</div>
+
+<script src="shoppingList.js"></script> <!--muss am Ende vom Skript stehen -->
 </body>
+</html>
