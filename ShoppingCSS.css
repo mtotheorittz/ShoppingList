@@ -6,7 +6,11 @@
      margin: 0;
      overflow: hidden;
      font-family: Arial, Helvetica, sans-serif;
-     background-image: url(paperbackground.png) 
+     background-image: url(paperbackground.png);
+    
+     overflow-y: visible;
+     overflow-x: hidden;
+
 
 }
  .topnav {
@@ -69,6 +73,7 @@
      background: #333;
      padding-top: 10px;
      font-family: fantasy;
+   
 }
  @media screen and (max-width: 600px) {
      .sidebar {
@@ -445,18 +450,30 @@ a svg #instagram {
   -webkit-transition: 200ms;
   -webkit-transition-timing-function: ease-in-out;
 }
+
+.Items{
+
+flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    font-family: fantasy;
+    color: #333;
+    font-size: 2em
+}
 /*
 @media only screen and (min-width:800){
-
     .addText { display: block; }
     .addIcon { display: none; }
-
   }
   @media only screen and (max-width:799){
-
     .addText { display: none; }
     .addIcon { display: block; }
-
   }
   @media only screen and (min-width: 800px){
       .deleteText {display:block;}

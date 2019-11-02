@@ -12,34 +12,30 @@
 <div class="topnav" id="myTopnav">
  
   <a href="https://de.wikipedia.org/wiki/Einkaufszettel">Shopping Liste</a>
+  <!--
   <div class="selectMobile">
-    <select id="listSelect"> 
-      <option value="meineListen">Meine Listen</option>
-      <option value="5d9c7b9ee2d16f00178a5c6b">Liste 1</option> 
-      <option value="5db00803655dfa001785c029">Liste 2</option>
-      <option value="5db00809655dfa001785c02a">Liste 3</option>
-      <option value="5db2c148e3d42a0017c30a9c">Liste 4</option>
-      "
-    </select>
+      <select id="listSelect"> 
+        <option value="meineListen">Meine Listen</option>
+        <option value="5d9c7b9ee2d16f00178a5c6b">Liste 1</option> 
+        <option value="5db00803655dfa001785c029">Liste 2</option>
+        <option value="5db00809655dfa001785c02a">Liste 3</option>
+        <option value="5db2c148e3d42a0017c30a9c">Liste 4</option>
+      </select>
+
+  </div>
+-->
 </div>
-
-
-
-</div>
-
-
-
 
 <div class="sidebar">  
 
     <div class="sidebar">
-        <img alt="logo" height="150" width="150" src="C:\Users\strausto\OneDrive - Hewlett Packard Enterprise\Desktop\ShoppingList-master\einstellungen.png">
+        <img alt="logo" height="150" width="150" src="einstellungen.png">
 
         <ul>
 
-            <li class="listItem"><a href="https://shopping-lists-api.herokuapp.com/" target="_blank"><img class ="listeHinzufügenIcon"alt="icon" height="40" src=
-              "C:\Users\morit\Downloads\ShoppingList-master\listehinzufügen.png" width=
-              "40"><span class="listeHinzufügenText">Liste hinzufügen</span></a></li>
+            <li class="listItem"><a href="https://shopping-lists-api.herokuapp.com/" target="_blank"><img alt="icon" height="40" src=
+              "listehinzufügen.png" width=
+              "40">Liste hinzufügen</a></li>
 
             <div class="select">
                 <select id="listSelect"> 
@@ -47,32 +43,20 @@
                   <option value="5db00803655dfa001785c029">Liste 2</option>
                   <option value="5db00809655dfa001785c02a">Liste 3</option>
                   <option value="5db2c148e3d42a0017c30a9c">Liste 4</option>
-                  "
                 </select>
             </div>
-
-
             
-            <li class="listItem"><a href="ShoppingList.html#inputfield"><img class="addIcon" height ="40"src="C:\Users\morit\Downloads\ShoppingList-master\add.png" width="40"/><span class="addText"> Item hinzufügen </span> </a></li>
-           
-            
-            <!-- 
-              <li id='home' ><a href='index.php'><span class='menu_text'>Home</span><img class='menu_icon' src='_images/icons.svg#svg_home' alt=''/></a></li>
-              <li id='other'><a href='other.php'><span class='menu_text'>others</span><img class='menu_icon' src='_images/icons.svg#others' alt=''/></a></li>
-              ...
-              
-               <li class="listItem"><a href="ShoppingList.html#inputfield"><img alt="icon" height="40" src=
-            "C:\Users\strausto\OneDrive - Hewlett Packard Enterprise\Desktop\ShoppingList-master\add.png" width=
+
+            <li class="listItem"><a href="ShoppingList.html#inputfield"><img alt="icon" height="40" src=
+            "add.png" width=
             "40">Item hinzufügen</a></li>
-                      
-             
+
 
             <li class="listItem"><a href="#"><img alt="icon" height="40" src=
-            "C:\Users\strausto\OneDrive - Hewlett Packard Enterprise\Desktop\ShoppingList-master\delete.png" width=
+            "delete.png" width=
             "40">Item löschen</a></li>
 
-            -->
-            <li class="listItem"><a href="#"><img class="deleteIcon" height ="40"src="C:\Users\morit\Downloads\ShoppingList-master\delete.png" width="40"/><span class="deleteText"> Item löschen </span> </a></li>
+  
         </ul>
         <article>
             <a href="https://facebook.com/pascal.wegner.success" target="_blank">
@@ -105,31 +89,18 @@
 
 <form> 
     <input required="" type="text" id="myInput">
-  
-    <label class="placeholder" alt="Add Item" placeholder="Press Enter"></label>
+    
+    <label alt="Add Item" placeholder="Press Enter"></label>
 
-    <label>
-        <input name="checkItems" type="checkbox" />
-        <span class="checkbox-ghost"></span>
-        Item 1
-      </label>
+    <div id="item-list">
+    
+    </div>
 
-      <label>
-        <input name="checkItems" type="checkbox" />
-        <span class="checkbox-ghost"></span>
-        Item 2
-      </label>
-
-      <label>
-        <input name="checkItems" type="checkbox" />
-        <span class="checkbox-ghost"></span>
-        Item 3
-      </label>
 </form>
 
-<button id="myBtn" onclick="additem(myInput)">Button unsichtbar lol</button>
 
-<div id="Items"></div>
+
+
 
 
 <!-- Werbung LOL
@@ -140,6 +111,7 @@
 
 
 
-<script src="shoppingList.js"></script> <!--muss am Ende vom Skript stehen -->
+<script src="shoppingList.js"></script>
+<script src="requests.js"></script>
 </body>
 </html>
