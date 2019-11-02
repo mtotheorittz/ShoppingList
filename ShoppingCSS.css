@@ -204,9 +204,7 @@
      background-position: center;
 }
 
-.myBtn{
-    display: none;
-}
+
 
  @keyframes rightToLeftX {
      0% {
@@ -378,7 +376,7 @@
 }
 
  input[type='radio'], input[type='checkbox'] {
-     position: absolute;
+    position: absolute;
      opacity: 0;
 }
  label.selected .radio-ghost::before {
@@ -503,15 +501,12 @@ flex-shrink: 0;
     .selectMobile{display: none;}
     .select{display: block;}
 }
-@media only screen and (min-width: 1000px){
-    #myBtn{display: block;}
+@media only screen and (max-width: 999px){
+    form{width: auto;}
 }
 @media only screen and (max-width: 999px){
-    #myBtn{display: none;}
+    input[type="text"][required] + label[placeholder] {left: 0px;}
 }
 @media only screen and (max-width: 999px){
-    #myInput{display: none;}
-}
-@media only screen and (max-width: 999px){
-    .placeholder{display:none;}
+    input[type="text"] {left:0px;top:130px;}
 }
