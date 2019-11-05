@@ -533,7 +533,7 @@ flex-shrink: 0;
 }
 
 
-@media screen and (max-width: 600px) and (min-width: 100px){
+@media screen and (max-width: 999px) and (min-width: 100px){
 
     #listSelect {
         position: fixed;
