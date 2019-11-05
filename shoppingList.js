@@ -1,17 +1,21 @@
+//
 var input = document.getElementById("myInput");
-
-
+var selectedList;
+//
+//
+//
 document.getElementById("listSelect").addEventListener('change', function(event) {
-  console.log(event.target.value); // Get ID of list
-  getList(event.target.value);
+  selectedList = event.target.value;
+  console.log(event.target.value);      //Set ID of list, if LISTSELECT changes
+  getList(event.target.value);          //gibt  ausgewählte Liste aus
 });
-document.getElementById("listSelectMobile").addEventListener('change', function(event) {
-  console.log(event.target.value); // Get ID of list
-  getList(event.target.value);
+//
+document.getElementById("listSelect").addEventListener('mouseover', function(event) {
+selectedList = event.target.value;
+getList(event.target.value);
 });
-
-
-
+//
+//
 //Checkbox
 document.addEventListener('change', function (e) {
 
@@ -19,52 +23,38 @@ document.addEventListener('change', function (e) {
       if (e.target.checked) {
         e.target.parentNode.className = 'selected';
         setTimeout(function() {
-          removeItem(e.target.id);
+          removeItem(e.target.id);         //löscht Item wenn angekreuzt nach 3 sek
         }, 3000);
       } else {
-        e.target.parentNode.className = '';
+        e.target.parentNode.className = '';   
       }
     }
 });
-
-function showItemLists(lists) {
-  // 
-  var id = loadListId();
+//
+//
+//
+function showItemLists(lists) {  //gibt ausgewählte Liste aus
+ 
+  var id = loadListId();     // aktuelle Listen ID
   var select = document.getElementById("listSelect");
-  var html = '';
-  lists.forEach(list => {
-    if (!id) {
+  var html = '';    //String
+  lists.forEach(list => {  //speichert ID von aktueller Liste
+    if (!id) {             
       id = list._id;
       storeListId(id);
     }
-    var selected = id === list._id ? true : false;
+    var selected = id === list._id ? true : false;    //...und gibt Items aus
     if (selected) {
       addItemList(list);
     }
-    html += '<option selected="'+selected+'" value="'+list._id+'">'+list.name+'</option> ';
+    html += '<option selected="'+selected+'" value="'+list._id+'">'+list.name+'</option>';  //...und gibt Listenname in DD-Menü aus
   });
   select.innerHTML = html;
 }
-function showItemLists(lists) {
-  // 
-  var id = loadListId();
-  var select = document.getElementById("listSelectMobile");
-  var html = '';
-  lists.forEach(list => {
-    if (!id) {
-      id = list._id;
-      storeListId(id);
-    }
-    var selected = id === list._id ? true : false;
-    if (selected) {
-      addItemList(list);
-    }
-    html += '<option selected="'+selected+'" value="'+list._id+'">'+list.name+'</option> ';
-  });
-  select.innerHTML = html;
-}
-
-function addItemList(list) {
+//
+//
+//
+function addItemList(list) {        //Fügt Item zu Liste hinzu
   var div = document.getElementById("item-list");
   var html  = "";
   list.items.forEach(item => {
@@ -72,22 +62,55 @@ function addItemList(list) {
   });
   div.innerHTML = html;
 }
-
-// Get the input field
-var input = document.getElementById("myInput");
-
-// Execute a function when the user presses a key on the keyboard
+//
+//
+//
 input.addEventListener("keydown", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.which == 13 || event.keyCode == 13) {
-    // Cancel the default action, if needed
+  if (event.which == 13 || event.keyCode == 13) {       // Number 13 is the "Enter" key on the keyboard
     event.preventDefault();
-    addItem(input.value);
-    // Trigger the button element with a click
-//    document.getElementById("myBtn").click();
+    addItem(input.value);     // & führt AddItem Funktion aus
   }
 });
+//
+//
+// Delete-Button zum Löschen von Listen
+var deleteBtn = document.getElementById("deleteIcon");
 
+deleteBtn.onclick = function () {
+  deleteList(selectedList);   
+ //window.location.reload();     // <-- evtl. um Seite danach neu zu laden       
+}
+//
+// 
+// Modal Funktionen
+var addBtn = document.getElementById("addListButton");
+var modal = document.getElementById("listAddModal");
+var btn = document.getElementById("addList");
+var span = document.getElementsByClassName("close")[0];
+//
+addBtn.onclick = function() { 
+	var newListName = document.getElementById("newList").value;
+	addList(newListName)
+	var listJson = {"name": newListName};   //neue Liste anlegen
+  console.log(listJson);
+  //window.location.reload();      //<-- evtl. um Seite danach neu zu laden 
+}
+//
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+//
+span.onclick = function() {
+  modal.style.display = "none";
+}
+//
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
-
+$("#myTopnav").click(function(){
+  $(".topnav").css("background-color", "blue");
+});
 

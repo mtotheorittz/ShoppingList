@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Sacramento');
+﻿@import url('https://fonts.googleapis.com/css?family=Sacramento');
  html{
     font-family: 'Sacramento', cursive;
 }
@@ -37,7 +37,7 @@
  .topnav .icon {
      display: none;
 }
- @media screen and (max-width: 600px) {
+ @media screen and (max-width: 999px) {
      .topnav a:not(:first-child) {
         display: none;
     }
@@ -46,7 +46,7 @@
          display: block;
     }
 }
- @media screen and (max-width: 600px) {
+ @media screen and (max-width: 999px) {
      .topnav.responsive {
         position: relative;
     }
@@ -75,7 +75,7 @@
      font-family: fantasy;
    
 }
- @media screen and (max-width: 600px) {
+ @media screen and (max-width: 999px) {
      .sidebar {
          width: auto;
          height: 100%
@@ -87,7 +87,7 @@
         margin-left: 0;
     }
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 599px){
     .getItemBox {position: middle}
 }
 /*SIDEBAR*/
@@ -99,7 +99,7 @@
      margin-left: auto;
      vertical-align: middle;
      margin-top: -2px;
-     margin-right: 20px;
+     margin-right: 10px;
 }
  .sidebar ul {
      line-height: 40px;
@@ -108,33 +108,33 @@
      padding-left: 0;
 }
  .listItem {
-     height: 40px;
-     width: 240px;
-     transition: .4s;
-    /* Geschwindigk. für Animation */
-     position: relative;
-     left: -40px;
+    height: 40px;
+	width: 240px;
+	transition: .4s;
+	/* Geschwindigk. für Animation */
+	position: relative;
+	left: -40px;
+	color: white;
+	cursor: pointer;
 }
  .listItem:hover {
      left: 0;
 }
  select {
-     width: 100%;
-     height: 40px;
-     padding-left: 10px;
-     background: repeat;
-     color: #fff;
-     font-family: fantasy;
-     font-size: 16px;
-     box-shadow: 2px 2px 5px 1px rgba(204, 192, 192, 0.3);
-     border-radius: 3px;
-     outline: none;
-     cursor: pointer;
-     -moz-appearance: none;
-     -webkit-appearance: none;
-     appearance: none;
-     border: none;
-     overflow: hidden;
+    height: 40px;
+	background: repeat;
+	color: #fff;
+	font-family: fantasy;
+	font-size: 16px;
+	box-shadow: 2px 2px 5px 1px rgba(204, 192, 192, 0.3);
+	border-radius: 3px;
+	outline: none;
+	cursor: pointer;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	overflow: hidden;
 }
  select::-ms-expand {
      display: none;
@@ -464,49 +464,132 @@ flex-shrink: 0;
     color: #333;
     font-size: 2em
 }
-/*
-@media only screen and (min-width:800){
-    .addText { display: block; }
-    .addIcon { display: none; }
-  }
-  @media only screen and (max-width:799){
-    .addText { display: none; }
-    .addIcon { display: block; }
-  }
-  @media only screen and (min-width: 800px){
-      .deleteText {display:block;}
-      .deleteIcon {display: none;}
-  }
-  @media only screen and (max-width: 799){
-    .deleteText {display:none;}
-    .deleteIcon {display: block;}
-}
-@media only screen and (min-width: 800px){
-    .listeHinzufügenText {display: block;}
-    .listeHinzufügenIcon {display: none;}
-}
-@media only screen and (max-width: 799px){
-    .listeHinzufügenText {display: none;}
-    .listeHinzufügenIcon {display: block;}
-}
-*/
-@media only screen and (max-width:1000px){
+
+@media only screen and (max-width:999px){
     .checkbox-ghost {float:right;}
 }
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 999px){
     .select {overflow: hidden;}
     .select{width:50%}
 }
+
+/*
 @media only screen and (min-width: 1000px){
     .selectMobile{display: none;}
     .select{display: block;}
 }
 @media only screen and (max-width: 999px){
+    .selectMobile{display: block;}
+    .select{display: none;}
+}
+
+*/
+@media only screen and (max-width: 900px){
     form{width: auto;}
 }
-@media only screen and (max-width: 999px){
+@media only screen and (max-width:599px){
     input[type="text"][required] + label[placeholder] {left: 0px;}
 }
-@media only screen and (max-width: 999px){
+@media only screen and (max-width:599px){
     input[type="text"] {left:0px;top:130px;}
 }
+
+/*Modal*/
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 300px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 25%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 600px) and (min-width: 100px){
+
+    #listSelect {
+        position: fixed;
+        top: 20px;
+        right: 3px;
+        height: 40px;
+        background: repeat;
+        color: #fff;
+        font-family: fantasy;
+        font-size: 16px;
+        border-radius: 7px;
+        outline: none;
+        cursor: pointer;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+    border: none;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 21px -5px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 21px -5px rgba(255,255,255,1);
+    box-shadow: 0px 0px 21px -5px rgba(255,255,255,1);
+    border: 1px solid white;
+    padding: 4px;   
+    }
+
+    .listItem {
+        position: fixed;
+        height: 40px;
+        color: white;
+        cursor: pointer;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 4px;
+        top: 15px;
+        position: fixed;
+        right: 105px;
+        transition: unset;
+        left: unset;
+        width: 53px;
+        -webkit-box-shadow: 0px 0px 21px -5px rgba(255,255,255,1);
+        -moz-box-shadow: 0px 0px 21px -5px rgba(255,255,255,1);
+        box-shadow: 0px 0px 21px -5px rgba(255,255,255,1);
+    }
+
+    .listItem:hover {
+        left: unset;
+    }
+
+    .sidebar img {
+        display: none;
+    }
+
+    .modal-content {
+        width: 51%;
+    }
+
+}
+
+
